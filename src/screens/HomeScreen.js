@@ -39,11 +39,9 @@ export default function HomeScreen() {
               style={{ fontSize: hp(3.8) }}
               className="font-semibold text-nuetral-600"
             >
-              Make your own food
-            </Text>
-            <Text style={{ fontSize: hp(3.8) }}>
               stay at <Text className="text-amber-400">home</Text>
             </Text>
+            <Text style={{ fontSize: hp(3.8) }}>make you own food</Text>
           </View>
         </View>
         {/* search bar */}
