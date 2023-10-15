@@ -1,5 +1,5 @@
 import { View, Text, ScrollView, Image, TextInput } from "react-native"
-import React from "react"
+import React, { useState } from "react"
 import { SafeAreaView } from "react-native-safe-area-context"
 import { StatusBar } from "expo-status-bar"
 import {
@@ -10,6 +10,8 @@ import { BellIcon, MagnifyingGlassIcon } from "react-native-heroicons/outline"
 import Categories from "../components.js/categories"
 
 export default function HomeScreen() {
+  const [activeCategory, setActiveCategory] = useState("Beef")
+
   return (
     <SafeAreaView className="flex-1 bg-white">
       <StatusBar style="dark" />
@@ -58,7 +60,10 @@ export default function HomeScreen() {
         </View>
         {/* categories */}
         <View>
-          <Categories />
+          <Categories
+            activeCategory={activeCategory}
+            setActiveCategory={setActiveCategory}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
