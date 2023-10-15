@@ -6,7 +6,6 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen"
-import Animated, { useSharedValue, withSpring } from "react-native-reanimated"
 
 export default function WelcomeScreen() {
   return (
