@@ -6,6 +6,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen"
+import { BellIcon } from "react-native-heroicons/outline"
 
 export default function HomeScreen() {
   return (
@@ -22,6 +23,7 @@ export default function HomeScreen() {
             source={require("../../assets/img/avatar.png")}
             style={{ height: hp(5.5), width: hp(5.5) }}
           />
+          <BellIcon size={hp(4)} color="gray" />
         </View>
       </ScrollView>
     </SafeAreaView>
