@@ -6,5 +6,5 @@
   <p>*press i *</p>
 
   <h3>Current Progress</h3>
-  https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/7b6cc51a-5f13-4409-981c-96d814d67524.gif
+https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/7b6cc51a-5f13-4409-981c-96d814d67524.gif
 
