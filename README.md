@@ -2,7 +2,7 @@
  <p> 1. npm i</p> 
   <p>2. npm run start</p>
   <p>3. press i </p>
-  <h3>*If error: npm start -- --reset-cache*</h3>
+  <h3>*If error:</h3><p> npm start -- --reset-cache*</p>
   <p>*press i*</p>
 
   <h3>Current Progress</h3>
