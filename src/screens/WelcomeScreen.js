@@ -26,7 +26,7 @@ export default function WelcomeScreen() {
       () => (ring2padding.value = withSpring(ring2padding.value + hp(5.5))),
       300
     )
-    setTimeout(() => navigation.navigate("Home"), 2500)
+    setTimeout(() => navigation.navigate("Home"), 1500)
   }, [])
   return (
     <SafeAreaView className="flex-1 justify-center items-center space-y-10 bg-amber-500">
