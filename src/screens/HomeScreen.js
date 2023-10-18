@@ -1,5 +1,5 @@
 import { View, Text, ScrollView, Image, TextInput } from "react-native"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { SafeAreaView } from "react-native-safe-area-context"
 import { StatusBar } from "expo-status-bar"
 import {
@@ -8,9 +8,27 @@ import {
 } from "react-native-responsive-screen"
 import { BellIcon, MagnifyingGlassIcon } from "react-native-heroicons/outline"
 import Categories from "../components.js/categories"
+import axios from "axios"
 
 export default function HomeScreen() {
   const [activeCategory, setActiveCategory] = useState("Beef")
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    getCategories()
+  }, [])
+  const getCategories = async () => {
+    try {
+      const response = await axios.get(
+        "https://themealdb.com/api/json/v1/1/categories.php"
+      )
+      if (response && response.data) {
+        setCategories(response.data.categories)
+      }
+    } catch (err) {
+      console.log("error", err.message)
+    }
+  }
 
   return (
     <SafeAreaView className="flex-1 bg-white">
@@ -59,6 +77,7 @@ export default function HomeScreen() {
         {/* categories */}
         <View>
           <Categories
+            categories={categories}
             activeCategory={activeCategory}
             setActiveCategory={setActiveCategory}
           />

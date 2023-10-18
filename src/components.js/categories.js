@@ -7,7 +7,11 @@ import {
 } from "react-native-responsive-screen"
 import Animated, { FadeInDown } from "react-native-reanimated"
 
-export default function Categories({ activeCategory, setActiveCategory }) {
+export default function Categories({
+  categories,
+  activeCategory,
+  setActiveCategory,
+}) {
   return (
     <Animated.View entering={FadeInDown.duration(500).springify()}>
       <ScrollView
@@ -16,13 +20,13 @@ export default function Categories({ activeCategory, setActiveCategory }) {
         className="space-x-4"
         contentContainerStyle={{ paddingHorizontal: 15 }}
       >
-        {categoryData.map((cat, index) => {
-          let isActive = cat.name == activeCategory
+        {categories.map((cat, index) => {
+          let isActive = cat.strCategory == activeCategory
 
           return (
             <TouchableOpacity
               key={index}
-              onPress={() => setActiveCategory(cat.name)}
+              onPress={() => setActiveCategory(cat.strCategory)}
               className="flex items-center space-y-1"
             >
               <View
@@ -37,13 +41,13 @@ export default function Categories({ activeCategory, setActiveCategory }) {
                 ]}
               >
                 <Image
-                  source={{ uri: cat.image }}
+                  source={{ uri: cat.strCategoryThumb }}
                   style={{ width: hp(6), height: hp(6) }}
                   className="rounded-full"
                 />
               </View>
               <Text className="text-neutral-600" style={{ fontSize: hp(1.6) }}>
-                {cat.name}
+                {cat.strCategory}
               </Text>
             </TouchableOpacity>
           )
