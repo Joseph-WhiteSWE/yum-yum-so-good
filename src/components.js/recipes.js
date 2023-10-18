@@ -8,7 +8,7 @@ import MasonryList from "@react-native-seoul/masonry-list"
 import { mealData } from "../constants/"
 import Animated, { FadeInDown } from "react-native-reanimated"
 
-export default function Recipes(categories) {
+export default function Recipes() {
   const [showMasonryList, setShowMasonryList] = useState(false)
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -27,23 +27,19 @@ export default function Recipes(categories) {
         Recipes
       </Text>
       <View>
-        {categories.length === 0
-          ? null
-          : showMasonryList && (
-              <MasonryList
-                data={mealData}
-                keyExtractor={item => item.id}
-                numColumns={2}
-                showsVerticalScrollIndicator={false}
-                renderItem={({ item, i }) => (
-                  <RecipeCard item={item} index={i} />
-                )}
-                // refreshing={isLoadingNext}
-                // onRefresh={() => refetch({ first: ITEM_CNT })}
-                onEndReachedThreshold={0.1}
-                // onEndReached={() => loadNext(ITEM_CNT)}
-              />
-            )}
+        {showMasonryList && (
+          <MasonryList
+            data={mealData}
+            keyExtractor={item => item.id}
+            numColumns={2}
+            showsVerticalScrollIndicator={false}
+            renderItem={({ item, i }) => <RecipeCard item={item} index={i} />}
+            // refreshing={isLoadingNext}
+            // onRefresh={() => refetch({ first: ITEM_CNT })}
+            onEndReachedThreshold={0.1}
+            // onEndReached={() => loadNext(ITEM_CNT)}
+          />
+        )}
       </View>
     </View>
   )

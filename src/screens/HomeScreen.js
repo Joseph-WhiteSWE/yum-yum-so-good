@@ -87,7 +87,7 @@ export default function HomeScreen() {
         </View>
         {/* recipes */}
         <View>
-          <Recipes categories={categories} />
+          <Recipes />
         </View>
       </ScrollView>
     </SafeAreaView>
