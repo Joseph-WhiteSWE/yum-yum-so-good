@@ -1,6 +1,5 @@
 import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native"
 import React from "react"
-import { categoryData, mealData } from "../constants"
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -27,7 +26,8 @@ export default function Categories({
             <TouchableOpacity
               key={index}
               onPress={() => setActiveCategory(cat.strCategory)}
-              className="flex items-center space-y-1"
+              style={{ flex: "auto", alignItems: "center" }}
+              className="space-y-1"
             >
               <View
                 style={[
@@ -42,11 +42,10 @@ export default function Categories({
               >
                 <Image
                   source={{ uri: cat.strCategoryThumb }}
-                  style={{ width: hp(6), height: hp(6) }}
-                  className="rounded-full"
+                  style={{ width: hp(6), height: hp(6), borderRadius: 50 }}
                 />
               </View>
-              <Text className="text-neutral-600" style={{ fontSize: hp(1.6) }}>
+              <Text style={{ fontSize: hp(1.6), color: "rgb(82 82 82)" }}>
                 {cat.strCategory}
               </Text>
             </TouchableOpacity>

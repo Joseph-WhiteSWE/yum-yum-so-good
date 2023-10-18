@@ -8,6 +8,7 @@ import {
 } from "react-native-responsive-screen"
 import { BellIcon, MagnifyingGlassIcon } from "react-native-heroicons/outline"
 import Categories from "../components.js/categories"
+import Recipes from "../components.js/recipes"
 import axios from "axios"
 
 export default function HomeScreen() {
@@ -83,6 +84,10 @@ export default function HomeScreen() {
               setActiveCategory={setActiveCategory}
             />
           )}
+        </View>
+        {/* recipes */}
+        <View>
+          <Recipes />
         </View>
       </ScrollView>
     </SafeAreaView>
