@@ -54,7 +54,7 @@ export default function HomeScreen() {
   }
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
+    <SafeAreaView className="flex-1 bg-gray">
       <StatusBar style="dark" />
       <ScrollView
         showsVerticalScrollIndicatior={false}
