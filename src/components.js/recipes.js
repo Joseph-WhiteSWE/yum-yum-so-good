@@ -1,4 +1,4 @@
-import { View, Text, Pressable, Image } from "react-native"
+import { View, Text, onPress, Image, Pressable } from "react-native"
 import React, { useState, useEffect } from "react"
 import {
   widthPercentageToDP as wp,
@@ -8,8 +8,10 @@ import MasonryList from "@react-native-seoul/masonry-list"
 import Animated, { FadeInDown } from "react-native-reanimated"
 import Loading from "./loading"
 import { CachedImage } from "../helpers/image"
+import { useNavigation } from "@react-navigation/native"
 
 export default function Recipes({ meals }) {
+  const navigation = useNavigation()
   const [showMasonryList, setShowMasonryList] = useState(false)
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -37,7 +39,9 @@ export default function Recipes({ meals }) {
               keyExtractor={item => item.idMeal}
               numColumns={2}
               showsVerticalScrollIndicator={false}
-              renderItem={({ item, i }) => <RecipeCard item={item} index={i} />}
+              renderItem={({ item, i }) => (
+                <RecipeCard item={item} index={i} navigation={navigation} />
+              )}
               // refreshing={isLoadingNext}
               // onRefresh={() => refetch({ first: ITEM_CNT })}
               onEndReachedThreshold={0.1}
@@ -50,7 +54,7 @@ export default function Recipes({ meals }) {
   )
 }
 
-const RecipeCard = ({ item, index }) => {
+const RecipeCard = ({ item, index, navigation }) => {
   let isEven = index % 2 === 0
   return (
     <Animated.View
@@ -66,6 +70,7 @@ const RecipeCard = ({ item, index }) => {
           paddingRight: isEven ? 8 : 0,
         }}
         className="flex justify-center mb-4 space-y-1"
+        onPress={() => navigation.navigate("RecipeDetail", { ...item })}
       >
         {/* <Image
           source={{ uri: item.strMealThumb }}
