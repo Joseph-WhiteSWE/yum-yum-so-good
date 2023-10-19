@@ -5,7 +5,6 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen"
 import MasonryList from "@react-native-seoul/masonry-list"
-import { mealData } from "../constants/"
 import Animated, { FadeInDown } from "react-native-reanimated"
 
 export default function Recipes({ meals }) {
