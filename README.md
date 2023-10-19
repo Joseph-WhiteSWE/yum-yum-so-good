@@ -1,5 +1,7 @@
  <h3>To start:</h3>
+ ---
 <h4>install xcode or andriod equivalent</h4>
+---
  
  <div>1. npm i</div> 
  <div>2. npm run start</div>
