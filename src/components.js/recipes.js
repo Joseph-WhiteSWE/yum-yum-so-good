@@ -6,13 +6,14 @@ import {
 } from "react-native-responsive-screen"
 import MasonryList from "@react-native-seoul/masonry-list"
 import Animated, { FadeInDown } from "react-native-reanimated"
+import Loading from "./loading"
 
 export default function Recipes({ meals }) {
   const [showMasonryList, setShowMasonryList] = useState(false)
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowMasonryList(true)
-    }, 750)
+    }, 550)
     return () => {
       clearTimeout(timer)
     }
@@ -26,18 +27,22 @@ export default function Recipes({ meals }) {
         Recipes
       </Text>
       <View>
-        {showMasonryList && (
-          <MasonryList
-            data={meals}
-            keyExtractor={item => item.idMeal}
-            numColumns={2}
-            showsVerticalScrollIndicator={false}
-            renderItem={({ item, i }) => <RecipeCard item={item} index={i} />}
-            // refreshing={isLoadingNext}
-            // onRefresh={() => refetch({ first: ITEM_CNT })}
-            onEndReachedThreshold={0.1}
-            // onEndReached={() => loadNext(ITEM_CNT)}
-          />
+        {meals.length === 0 ? (
+          <Loading size="large" className="mt-20" />
+        ) : (
+          showMasonryList && (
+            <MasonryList
+              data={meals}
+              keyExtractor={item => item.idMeal}
+              numColumns={2}
+              showsVerticalScrollIndicator={false}
+              renderItem={({ item, i }) => <RecipeCard item={item} index={i} />}
+              // refreshing={isLoadingNext}
+              // onRefresh={() => refetch({ first: ITEM_CNT })}
+              onEndReachedThreshold={0.1}
+              // onEndReached={() => loadNext(ITEM_CNT)}
+            />
+          )
         )}
       </View>
     </View>
