@@ -14,7 +14,7 @@
  <div>2. press i</div>
   
   <h3>Current Run</h3>
-  https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/f332c015-3596-4f18-8104-466b0ee392b4
+  https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/39347713-7cb1-4684-8489-21bc9c657255
 
   <h3>First Run</h3>
   https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/7b6cc51a-5f13-4409-981c-96d814d67524
