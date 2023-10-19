@@ -5,7 +5,7 @@
  <div>1. npm i</div> 
  <div>2. npm run start</div>
  <div>3. press i </div>
- <p>4.press r to resart the app at any time</p>
+ <p>4. press r to resart the app at any time</p>
 
 <em>may show red timeout error, that's okay, just wait</em>
 
