@@ -5,6 +5,7 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen"
 import Animated, { FadeInDown } from "react-native-reanimated"
+import { CachedImage } from "../helpers/image"
 
 export default function Categories({
   categories,
@@ -40,8 +41,12 @@ export default function Categories({
                     : { backgroundColor: "rgba(0, 0, 0, 0.1)" },
                 ]}
               >
-                <Image
+                {/* <Image
                   source={{ uri: cat.strCategoryThumb }}
+                  style={{ width: hp(6), height: hp(6), borderRadius: 50 }}
+                /> */}
+                <CachedImage
+                  uri={cat.strCategoryThumb}
                   style={{ width: hp(6), height: hp(6), borderRadius: 50 }}
                 />
               </View>
