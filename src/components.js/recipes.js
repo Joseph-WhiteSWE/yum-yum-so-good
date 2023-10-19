@@ -8,12 +8,12 @@ import MasonryList from "@react-native-seoul/masonry-list"
 import { mealData } from "../constants/"
 import Animated, { FadeInDown } from "react-native-reanimated"
 
-export default function Recipes() {
+export default function Recipes({ meals }) {
   const [showMasonryList, setShowMasonryList] = useState(false)
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowMasonryList(true)
-    }, 500)
+    }, 750)
     return () => {
       clearTimeout(timer)
     }
@@ -29,8 +29,8 @@ export default function Recipes() {
       <View>
         {showMasonryList && (
           <MasonryList
-            data={mealData}
-            keyExtractor={item => item.id}
+            data={meals}
+            keyExtractor={item => item.idMeal}
             numColumns={2}
             showsVerticalScrollIndicator={false}
             renderItem={({ item, i }) => <RecipeCard item={item} index={i} />}
@@ -50,7 +50,7 @@ const RecipeCard = ({ item, index }) => {
   return (
     <Animated.View
       entering={FadeInDown.delay(index * 100)
-        .duration(500)
+        .duration(600)
         .springify()
         .damping(20)}
     >
@@ -63,7 +63,7 @@ const RecipeCard = ({ item, index }) => {
         className="flex justify-center mb-4 space-y-1"
       >
         <Image
-          source={{ uri: item.image }}
+          source={{ uri: item.strMealThumb }}
           style={{
             width: "100%",
             height: index % 3 === 0 ? hp(25) : hp(35),
@@ -75,7 +75,9 @@ const RecipeCard = ({ item, index }) => {
           className="font-semibold ml-2 text-neutral-600"
           style={{ textAlign: "center", fontSize: hp(2) }}
         >
-          {item.name.length > 20 ? item.name.slice(0, 20) + "..." : item.name}
+          {item.strMeal.length > 20
+            ? item.strMeal.slice(0, 20) + "..."
+            : item.strMeal}
         </Text>
       </Pressable>
     </Animated.View>

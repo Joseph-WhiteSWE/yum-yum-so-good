@@ -14,9 +14,11 @@ import axios from "axios"
 export default function HomeScreen() {
   const [activeCategory, setActiveCategory] = useState("Beef")
   const [categories, setCategories] = useState([])
+  const [meals, setMeals] = useState([])
 
   useEffect(() => {
     getCategories()
+    getRecipes()
   }, [])
   const getCategories = async () => {
     try {
@@ -30,13 +32,26 @@ export default function HomeScreen() {
       console.log("error", err.message)
     }
   }
+  const getRecipes = async (category = "Beef") => {
+    try {
+      const response = await axios.get(
+        `https://themealdb.com/api/json/v1/1/filter.php?c=${category}`
+      )
+      // console.log("got recipes", response.data)
+      if (response && response.data) {
+        setMeals(response.data.meals)
+      }
+    } catch (err) {
+      console.log("error", err.message)
+    }
+  }
 
   return (
     <SafeAreaView className="flex-1 bg-white">
       <StatusBar style="dark" />
       <ScrollView
         showsVerticalScrollIndicatior={false}
-        contentComntainerStyle={{ paddingBottom: 50 }}
+        contentContainerStyle={{ paddingBottom: 50 }}
         className="space-y-6 pt-14"
       >
         {/* avatar and bell icon */}
@@ -77,17 +92,15 @@ export default function HomeScreen() {
         </View>
         {/* categories */}
         <View>
-          {categories.length > 0 && (
-            <Categories
-              categories={categories}
-              activeCategory={activeCategory}
-              setActiveCategory={setActiveCategory}
-            />
-          )}
+          <Categories
+            categories={categories}
+            activeCategory={activeCategory}
+            setActiveCategory={setActiveCategory}
+          />
         </View>
         {/* recipes */}
         <View>
-          <Recipes />
+          <Recipes meals={meals} />
         </View>
       </ScrollView>
     </SafeAreaView>
