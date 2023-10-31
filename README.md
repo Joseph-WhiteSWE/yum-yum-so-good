@@ -33,5 +33,5 @@
  <h3>Second Snapshot</h3>
  https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/39347713-7cb1-4684-8489-21bc9c657255
 
- <h3>First Progression</h3>
+ <h3>First Snapshot</h3>
  https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/7b6cc51a-5f13-4409-981c-96d814d67524
