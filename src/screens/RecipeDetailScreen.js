@@ -11,7 +11,11 @@ import {
   ClockIcon,
   UsersIcon,
 } from "react-native-heroicons/outline"
-import { HeartIcon } from "react-native-heroicons/solid"
+import {
+  HeartIcon,
+  FireIcon,
+  Square3Stack3DIcon,
+} from "react-native-heroicons/solid"
 import { useNavigation } from "@react-navigation/native"
 import axios from "axios"
 import Loading from "../components.js/loading"
@@ -148,6 +152,62 @@ export default function RecipeDetailScreen(props) {
                 </Text>
               </View>
             </View>
+            <View className="flex rounded-full bg-amber-300 p-2">
+              <View
+                style={{ height: hp(6.5), width: hp(6.5) }}
+                className="bg-white rounded-full flex items-center justify-center"
+              >
+                <FireIcon size={hp(4)} strokeWidth={2.5} color="#525252" />
+              </View>
+              <View className="flex items-center py-2 space-y-1">
+                <Text
+                  style={{ fontSize: hp(2) }}
+                  className="font-bold text-neutral-700"
+                >
+                  103
+                </Text>
+                <Text
+                  style={{ fontSize: hp(1.3) }}
+                  className="font-bold text-neutral-700"
+                >
+                  Calories
+                </Text>
+              </View>
+            </View>
+            <View className="flex rounded-full bg-amber-300 p-2">
+              <View
+                style={{ height: hp(6.5), width: hp(6.5) }}
+                className="bg-white rounded-full flex items-center justify-center"
+              >
+                <Square3Stack3DIcon
+                  size={hp(4)}
+                  strokeWidth={2.5}
+                  color="#525252"
+                />
+              </View>
+              <View className="flex items-center py-2 space-y-1">
+                <Text
+                  style={{ fontSize: hp(2) }}
+                  className="font-bold text-neutral-700"
+                ></Text>
+                <Text
+                  style={{ fontSize: hp(1.3) }}
+                  className="font-bold text-neutral-700"
+                >
+                  Easy
+                </Text>
+              </View>
+            </View>
+          </View>
+          {/* ingredients */}
+          <View className="space-y-4">
+            <Text
+              style={{ fontSize: hp(2.5) }}
+              className="font-bold flex-1 text-neutral-700"
+            >
+              Ingredients
+            </Text>
+            <View className="space-y-2 ml-3"></View>
           </View>
         </View>
       )}
