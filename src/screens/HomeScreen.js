@@ -66,22 +66,22 @@ export default function HomeScreen() {
             source={require("../../assets/img/avatar.png")}
             style={{ height: hp(7), width: hp(7) }}
           />
-          <BellIcon size={hp(4)} color="gray" />
+          {/* <BellIcon size={hp(4)} color="gray" /> */}
         </View>
 
         {/* greetings */}
         <View className="mx-4 spacey-y-2 mb-2">
-          <Text style={{ fontSize: hp(3) }} className="text-nuetral-600">
-            Hello Joseph!
+          <Text style={{ fontSize: hp(3.8) }} className="text-nuetral-600">
+            Hello!
           </Text>
           <View>
             <Text
               style={{ fontSize: hp(3.8) }}
               className="font-semibold text-nuetral-600"
             >
-              stay at <Text className="text-amber-400">home</Text>
+              Let's stay at <Text className="text-amber-400">home</Text>
             </Text>
-            <Text style={{ fontSize: hp(3.8) }}>make you own food</Text>
+            <Text style={{ fontSize: hp(3.8) }}>and make our own food!</Text>
           </View>
         </View>
         {/* search bar */}
