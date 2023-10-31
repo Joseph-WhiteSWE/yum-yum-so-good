@@ -1,4 +1,4 @@
- <h3>To start: Install xcode</h3>
+ <h3>To start: Install Expo Go</h3>
  <h3>Go to camera and capture image</h3>
  <h3>IOS</h3>
 <img width="312" alt="Screenshot 2023-10-31 at 3 44 55 PM" src="https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/2dcf05de-85b1-4095-82ea-aec63e5c41d5">
