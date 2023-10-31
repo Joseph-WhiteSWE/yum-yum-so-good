@@ -6,7 +6,11 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen"
-import { ChevronLeftIcon } from "react-native-heroicons/outline"
+import {
+  ChevronLeftIcon,
+  ClockIcon,
+  UsersIcon,
+} from "react-native-heroicons/outline"
 import { HeartIcon } from "react-native-heroicons/solid"
 import { useNavigation } from "@react-navigation/native"
 import axios from "axios"
@@ -84,18 +88,67 @@ export default function RecipeDetailScreen(props) {
       ) : (
         <View className="px-4 flex justify-between space-y-4 pt-8">
           {/* name and area */}
-          <Text
-            style={{ fontSize: hp(3) }}
-            className="font-bold flex-1 text-neutral-700"
-          >
-            {meal?.strMeal}
-          </Text>
-          <Text
-            style={{ fontSize: hp(2) }}
-            className="font-medium flex-1 text-neutral-500"
-          >
-            {meal?.strArea}
-          </Text>
+          <View className="space-y-2">
+            <Text
+              style={{ fontSize: hp(3) }}
+              className="font-bold flex-1 text-neutral-700"
+            >
+              {meal?.strMeal}
+            </Text>
+            <Text
+              style={{ fontSize: hp(2) }}
+              className="font-medium flex-1 text-neutral-500"
+            >
+              {meal?.strArea}
+            </Text>
+          </View>
+          {/* misc */}
+          <View className="flex-row justify-around">
+            <View className="flex rounded-full bg-amber-300 p-2">
+              <View
+                style={{ height: hp(6.5), width: hp(6.5) }}
+                className="bg-white rounded-full flex items-center justify-center"
+              >
+                <ClockIcon size={hp(4)} strokeWidth={2.5} color="#525252" />
+              </View>
+              <View className="flex items-center py-2 space-y-1">
+                <Text
+                  style={{ fontSize: hp(2) }}
+                  className="font-bold text-neutral-700"
+                >
+                  35
+                </Text>
+                <Text
+                  style={{ fontSize: hp(1.3) }}
+                  className="font-bold text-neutral-700"
+                >
+                  Mins
+                </Text>
+              </View>
+            </View>
+            <View className="flex rounded-full bg-amber-300 p-2">
+              <View
+                style={{ height: hp(6.5), width: hp(6.5) }}
+                className="bg-white rounded-full flex items-center justify-center"
+              >
+                <UsersIcon size={hp(4)} strokeWidth={2.5} color="#525252" />
+              </View>
+              <View className="flex items-center py-2 space-y-1">
+                <Text
+                  style={{ fontSize: hp(2) }}
+                  className="font-bold text-neutral-700"
+                >
+                  03
+                </Text>
+                <Text
+                  style={{ fontSize: hp(1.3) }}
+                  className="font-bold text-neutral-700"
+                >
+                  Servings
+                </Text>
+              </View>
+            </View>
+          </View>
         </View>
       )}
     </ScrollView>
