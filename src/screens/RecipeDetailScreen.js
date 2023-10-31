@@ -226,6 +226,14 @@ export default function RecipeDetailScreen(props) {
                       style={{ height: hp(1.5), width: hp(1.5) }}
                       className="bg-amber-300 rounded-full"
                     />
+                    <View className="slex-row space-x-2">
+                      <View>
+                        <Text>
+                          {meal["strMeasure" + i]}{" "}
+                          <Text>{meal["strIngredient" + i]}</Text>
+                        </Text>
+                      </View>
+                    </View>
                   </View>
                 )
               })}
