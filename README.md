@@ -1,11 +1,12 @@
  <h3>To Start:</h3>
  <h3> 1. Download Expo Go</h3>
  <h3> 2. Go to camera and capture image</h3>
+ 
  <h3>IOS</h3>
-<img width="312" alt="Screenshot 2023-10-31 at 3 44 55 PM" src="https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/2dcf05de-85b1-4095-82ea-aec63e5c41d5">
+ <img width="312" alt="Android" src="https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/ec60c74c-f462-4a1b-aaa9-3c6dd0e51352">
 
  <h3>Andriod</h3>
-<img width="311" alt="Screenshot 2023-10-31 at 3 46 29 PM" src="https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/148c610c-0b9b-4fc0-9e07-1b93a09d0315">
+<img width="312" alt="Android" src="https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/8c6492ad-6d50-40c4-a9be-aa6b60cdd44a">
 
 <h3>In Github </h3>
  
