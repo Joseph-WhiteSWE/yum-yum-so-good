@@ -45,6 +45,17 @@ export default function RecipeDetailScreen(props) {
       console.log("error", err.message)
     }
   }
+
+  const ingredientsIndexes = meal => {
+    if (!meal) return []
+    let indexes = []
+    for (let i = 1; i <= 20; i++) {
+      if (meal["strIngredient" + i]) {
+        indexes.push(i)
+      }
+    }
+    return indexes
+  }
   return (
     <ScrollView
       className="bg-gray flex-1"
@@ -207,7 +218,18 @@ export default function RecipeDetailScreen(props) {
             >
               Ingredients
             </Text>
-            <View className="space-y-2 ml-3"></View>
+            <View className="space-y-2 ml-3">
+              {ingredientsIndexes(meal).map(i => {
+                return (
+                  <View key={i} className="flex-row space-x-4">
+                    <View
+                      style={{ height: hp(1.5), width: hp(1.5) }}
+                      className="bg-amber-300 rounded-full"
+                    />
+                  </View>
+                )
+              })}
+            </View>
           </View>
         </View>
       )}
