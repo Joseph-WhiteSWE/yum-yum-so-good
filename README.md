@@ -9,10 +9,11 @@
 
 <h3>In Github </h3>
  
- <div>1. npm i</div> 
- <div>2. npm run start</div>
- <div>3. press i </div>
- <p>4. press r to resart the app at any time</p>
+ <div>1. install xcode</div> 
+ <div>2. npm i</div> 
+ <div>3. npm run start</div>
+ <div>4. press i </div>
+ <p>5. press r to resart the app at any time</p>
 
 <em>may show red timeout error, that's okay, just wait</em>
 
