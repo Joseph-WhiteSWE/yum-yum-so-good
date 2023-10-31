@@ -1,8 +1,10 @@
- <h3>To start:</h3>
+ <h3>To start: Install xcode</h3>
+ <h3>Go to camera and capture image</h3>
+ <h3>IOS</h3>
+<img width="312" alt="Screenshot 2023-10-31 at 3 44 55 PM" src="https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/2dcf05de-85b1-4095-82ea-aec63e5c41d5">
 
-<h4>install xcode</h4>
-
-Visit the Link: exp://u.expo.dev/update/b47acdc5-c78b-403a-afb3-2ee9e4a9983b
+ <h3>Andriod</h3>
+<img width="311" alt="Screenshot 2023-10-31 at 3 46 29 PM" src="https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/148c610c-0b9b-4fc0-9e07-1b93a09d0315">
 
 <h3>In Github </h3>
  
@@ -19,6 +21,9 @@ Visit the Link: exp://u.expo.dev/update/b47acdc5-c78b-403a-afb3-2ee9e4a9983b
   
   
  <h3>Current Progression</h3>
+
+  
+ <h3>Fourth Progression</h3>
  https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/a1cecd3b-9fe6-442f-a768-e8140c1e3b14
 
  <h3>Third Progression</h3>
