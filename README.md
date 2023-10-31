@@ -1,6 +1,10 @@
  <h3>To start:</h3>
 
 <h4>install xcode</h4>
+
+Visit the Link: exp://u.expo.dev/update/b47acdc5-c78b-403a-afb3-2ee9e4a9983b
+
+<h3>In Github </h3>
  
  <div>1. npm i</div> 
  <div>2. npm run start</div>
