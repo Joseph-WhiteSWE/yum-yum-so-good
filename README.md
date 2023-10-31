@@ -14,11 +14,14 @@
  <div>2. press i</div>
   
   
- <h3>Current Run</h3>
+ <h3>Current Progression</h3>
+ https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/a1cecd3b-9fe6-442f-a768-e8140c1e3b14
+
+ <h3>Third Progression</h3>
  https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/fc90092f-3e3b-465a-8e10-ec28c76093cc
 
- <h3>Second Run</h3>
+ <h3>Second Progression</h3>
  https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/39347713-7cb1-4684-8489-21bc9c657255
 
- <h3>First Run</h3>
+ <h3>First Progression</h3>
  https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/7b6cc51a-5f13-4409-981c-96d814d67524
