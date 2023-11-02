@@ -72,6 +72,14 @@ export default function HomeScreen() {
         contentContainerStyle={{ paddingBottom: 50 }}
         className="space-y-6 pt-14"
       >
+        {/* avatar and bell icon */}
+        <View className="mx-4 flex-row justify-between items-center mb-2">
+          <Image
+            source={require("../../assets/img/avatar.png")}
+            style={{ height: hp(7), width: hp(7) }}
+          />
+        </View>
+
         {/* greetings */}
         <View className="mx-4 spacey-y-2 mb-2">
           <Text style={{ fontSize: hp(3.8) }} className="text-nuetral-600">
