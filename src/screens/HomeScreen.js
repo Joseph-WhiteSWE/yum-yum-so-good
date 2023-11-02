@@ -1,4 +1,11 @@
-import { View, Text, ScrollView, Image, TextInput } from "react-native"
+import {
+  View,
+  Text,
+  ScrollView,
+  Image,
+  TextInput,
+  TouchableOpacity,
+} from "react-native"
 import React, { useState, useEffect } from "react"
 import { SafeAreaView } from "react-native-safe-area-context"
 import { StatusBar } from "expo-status-bar"
@@ -9,6 +16,7 @@ import {
 import Categories from "../components.js/categories"
 import Recipes from "../components.js/recipes"
 import axios from "axios"
+import { XCircleIcon } from "react-native-heroicons/solid"
 
 export default function HomeScreen() {
   const [activeCategory, setActiveCategory] = useState("Beef")
@@ -64,6 +72,11 @@ export default function HomeScreen() {
     setMeals(filteredMeals)
   }
 
+  const clearField = () => {
+    setSearchField("")
+    setAllMeals(allMeals)
+  }
+
   return (
     <SafeAreaView className="flex-1 bg-gray">
       <StatusBar style="dark" />
@@ -98,13 +111,18 @@ export default function HomeScreen() {
         {/* search bar */}
         <View className="mx-4 flex-row items-center rounded-full bg-black/5 p-[6px]">
           <TextInput
-            placeholder="search by specific food"
+            placeholder="search by food in category"
             placeholderTextColor={"gray"}
             style={{ fontSize: hp(2.5) }}
             className="flex-1 text-base mb-1 pl-3 tracking-wider"
             onChangeText={text => setSearchField(text)}
             value={searchField}
           />
+          <View>
+            <TouchableOpacity onPress={clearField}>
+              <XCircleIcon size={hp(5)} strokeWidth={3} color="gray" />
+            </TouchableOpacity>
+          </View>
         </View>
         {/* categories */}
         <View>

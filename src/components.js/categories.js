@@ -41,10 +41,6 @@ export default function Categories({
                     : { backgroundColor: "rgba(0, 0, 0, 0.1)" },
                 ]}
               >
-                {/* <Image
-                  source={{ uri: cat.strCategoryThumb }}
-                  style={{ width: hp(6), height: hp(6), borderRadius: 50 }}
-                /> */}
                 <CachedImage
                   uri={cat.strCategoryThumb}
                   style={{ width: hp(6), height: hp(6), borderRadius: 50 }}

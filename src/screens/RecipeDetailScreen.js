@@ -6,15 +6,12 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen"
-import {
-  ChevronLeftIcon,
-  ClockIcon,
-  UsersIcon,
-} from "react-native-heroicons/outline"
+import { ChevronLeftIcon, ClockIcon } from "react-native-heroicons/outline"
 import {
   HeartIcon,
-  FireIcon,
   Square3Stack3DIcon,
+  FireIcon,
+  UsersIcon,
 } from "react-native-heroicons/solid"
 import { useNavigation } from "@react-navigation/native"
 import axios from "axios"
