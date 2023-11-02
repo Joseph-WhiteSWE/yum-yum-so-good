@@ -120,7 +120,7 @@ export default function HomeScreen() {
           />
           <View>
             <TouchableOpacity onPress={clearField}>
-              <XCircleIcon size={hp(5)} strokeWidth={3} color="gray" />
+              <XCircleIcon size={hp(4)} strokeWidth={3} color="gray" />
             </TouchableOpacity>
           </View>
         </View>
