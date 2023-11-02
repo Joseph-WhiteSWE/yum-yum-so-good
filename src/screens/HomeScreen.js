@@ -6,7 +6,6 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen"
-import { MagnifyingGlassIcon } from "react-native-heroicons/outline"
 import Categories from "../components.js/categories"
 import Recipes from "../components.js/recipes"
 import axios from "axios"
@@ -73,15 +72,6 @@ export default function HomeScreen() {
         contentContainerStyle={{ paddingBottom: 50 }}
         className="space-y-6 pt-14"
       >
-        {/* avatar and bell icon */}
-        <View className="mx-4 flex-row justify-between items-center mb-2">
-          <Image
-            source={require("../../assets/img/avatar.png")}
-            style={{ height: hp(7), width: hp(7) }}
-          />
-          {/* <BellIcon size={hp(4)} color="gray" /> */}
-        </View>
-
         {/* greetings */}
         <View className="mx-4 spacey-y-2 mb-2">
           <Text style={{ fontSize: hp(3.8) }} className="text-nuetral-600">
