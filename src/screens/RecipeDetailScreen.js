@@ -17,6 +17,7 @@ import { useNavigation } from "@react-navigation/native"
 import axios from "axios"
 import Loading from "../components.js/loading"
 import Animated, { FadeInDown, FadeIn } from "react-native-reanimated"
+import AsyncStorage from "@react-native-async-storage/async-storage"
 
 export default function RecipeDetailScreen(props) {
   const item = props.route.params
@@ -29,12 +30,50 @@ export default function RecipeDetailScreen(props) {
     getMealData(item.idMeal)
   }, [])
 
+  useEffect(() => {
+    const readFavoriteStatus = async () => {
+      try {
+        const value = await AsyncStorage.getItem(
+          `favoriteStatus-${item.idMeal}`
+        )
+        if (value !== null) {
+          setIsFavorite(JSON.parse(value))
+        }
+      } catch (err) {
+        console.log.error("Failed to load the favorite status.", err)
+      }
+    }
+    readFavoriteStatus()
+  }, [item.idMeal])
+
+  const toggleFavorite = async () => {
+    try {
+      const newFavoriteStatus = !isFavorite
+      setIsFavorite(newFavoriteStatus)
+      await AsyncStorage.setItem(
+        `favoriteStatus-${item.idMeal}`,
+        JSON.stringify(newFavoriteStatus)
+      )
+    } catch (err) {
+      console.log.error("Failed to save the favorite status.", err)
+    }
+  }
+
+  // const removeFavoriteStatus = async idMeal => {
+  //   try {
+  //     await AsyncStorage.removeItem(`favoriteStatus-${idMeal}`)
+  //     console.log("Favorite status removed!")
+  //   } catch (e) {
+  //     console.log.error("Failed to remove the favorite status.", e)
+  //   }
+  // }
+
   const getMealData = async id => {
     try {
       const response = await axios.get(
         `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
       )
-      console.log(`got meal data: `, response.data)
+
       if (response && response.data) {
         setMeal(response.data.meals[0])
         setLoading(false)
@@ -83,12 +122,13 @@ export default function RecipeDetailScreen(props) {
       >
         <TouchableOpacity
           onPress={() => navigation.goBack()}
+          // onPress={removeFavoriteStatus}
           className="p-2 rounded-full ml-5 bg-white"
         >
           <ChevronLeftIcon size={hp(3.5)} strokeWidth={4.5} color="#fbbf24" />
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => setIsFavorite(!isFavorite)}
+          onPress={toggleFavorite}
           className="p-2 rounded-full mr-5 bg-white"
         >
           <HeartIcon
