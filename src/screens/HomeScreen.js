@@ -13,8 +13,8 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen"
-import Categories from "../components.js/categories"
-import Recipes from "../components.js/recipes"
+import Categories from "../components/categories"
+import Recipes from "../components/recipes"
 import axios from "axios"
 import { XCircleIcon } from "react-native-heroicons/solid"
 

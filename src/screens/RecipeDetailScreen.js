@@ -15,7 +15,7 @@ import {
 } from "react-native-heroicons/solid"
 import { useNavigation } from "@react-navigation/native"
 import axios from "axios"
-import Loading from "../components.js/loading"
+import Loading from "../components/loading"
 import Animated, { FadeInDown, FadeIn } from "react-native-reanimated"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 
