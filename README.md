@@ -9,7 +9,7 @@
  
  <div>1. install xcode</div> 
  <div>2. npm i</div> 
- <div>3. npm run start</div>
+ <div>3. npm start</div>
  <div>4. press i </div>
  <p>5. press r to resart the app at any time</p>
 
