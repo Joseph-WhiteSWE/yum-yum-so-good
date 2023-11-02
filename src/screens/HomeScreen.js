@@ -6,7 +6,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen"
-import { BellIcon, MagnifyingGlassIcon } from "react-native-heroicons/outline"
+import { MagnifyingGlassIcon } from "react-native-heroicons/outline"
 import Categories from "../components.js/categories"
 import Recipes from "../components.js/recipes"
 import axios from "axios"
@@ -15,16 +15,21 @@ export default function HomeScreen() {
   const [activeCategory, setActiveCategory] = useState("Beef")
   const [categories, setCategories] = useState([])
   const [meals, setMeals] = useState([])
+  const [allMeals, setAllMeals] = useState([])
+  const [searchField, setSearchField] = useState("")
 
   useEffect(() => {
     getCategories()
-    getRecipes()
-  }, [])
+    getRecipes(activeCategory)
+  }, [activeCategory])
+
+  useEffect(() => {
+    searchField ? filterRecipes(searchField) : setMeals(allMeals)
+  }, [searchField])
 
   const handleChangeCategory = category => {
-    getRecipes(category)
     setActiveCategory(category)
-    setMeals([])
+    getRecipes(category)
   }
 
   const getCategories = async () => {
@@ -39,12 +44,13 @@ export default function HomeScreen() {
       console.log("error", err.message)
     }
   }
-  const getRecipes = async (category = "Beef") => {
+  const getRecipes = async category => {
     try {
       const response = await axios.get(
         `https://themealdb.com/api/json/v1/1/filter.php?c=${category}`
       )
       if (response && response.data) {
+        setAllMeals(response.data.meals)
         setMeals(response.data.meals)
       }
     } catch (err) {
@@ -52,11 +58,18 @@ export default function HomeScreen() {
     }
   }
 
+  const filterRecipes = searchField => {
+    const filteredMeals = allMeals.filter(meal =>
+      meal.strMeal.toLowerCase().includes(searchField.toLowerCase())
+    )
+    setMeals(filteredMeals)
+  }
+
   return (
     <SafeAreaView className="flex-1 bg-gray">
       <StatusBar style="dark" />
       <ScrollView
-        showsVerticalScrollIndicatior={false}
+        showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 50 }}
         className="space-y-6 pt-14"
       >
@@ -79,7 +92,7 @@ export default function HomeScreen() {
               style={{ fontSize: hp(3.8) }}
               className="font-semibold text-nuetral-600"
             >
-              Let's stay at <Text className="text-amber-400">home</Text>
+              Let's stay <Text className="text-amber-400">home</Text>
             </Text>
             <Text style={{ fontSize: hp(3.8) }}>and make our own food!</Text>
           </View>
@@ -87,14 +100,13 @@ export default function HomeScreen() {
         {/* search bar */}
         <View className="mx-4 flex-row items-center rounded-full bg-black/5 p-[6px]">
           <TextInput
-            placeholder="search any recipe"
+            placeholder="search by specific food"
             placeholderTextColor={"gray"}
             style={{ fontSize: hp(2.5) }}
             className="flex-1 text-base mb-1 pl-3 tracking-wider"
+            onChangeText={text => setSearchField(text)}
+            value={searchField}
           />
-          <View className="bg-white rounded-full p-3">
-            <MagnifyingGlassIcon size={hp(2.5)} strokeWidth={3} color="gray" />
-          </View>
         </View>
         {/* categories */}
         <View>
