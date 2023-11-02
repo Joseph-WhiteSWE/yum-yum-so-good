@@ -3,10 +3,7 @@
  <h3> 2. Go to camera and capture image</h3>
  
  <h3>IOS</h3>
- <img width="312" alt="Android" src="https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/ec60c74c-f462-4a1b-aaa9-3c6dd0e51352">
-
- <h3>Andriod</h3>
-<img width="312" alt="Android" src="https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/8c6492ad-6d50-40c4-a9be-aa6b60cdd44a">
+ <img width="312" alt="IOS" src="https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/540a3288-b4ab-49b3-90e4-26bacac25524">
 
 <h3>In Github </h3>
  
