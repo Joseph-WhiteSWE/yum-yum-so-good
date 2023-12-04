@@ -1,11 +1,11 @@
-import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native"
-import React from "react"
+import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native";
+import React from "react";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
-} from "react-native-responsive-screen"
-import Animated, { FadeInDown } from "react-native-reanimated"
-import { CachedImage } from "../helpers/image"
+} from "react-native-responsive-screen";
+import Animated, { FadeInDown } from "react-native-reanimated";
+import { CachedImage } from "../helpers/image";
 
 export default function Categories({
   categories,
@@ -21,7 +21,7 @@ export default function Categories({
         contentContainerStyle={{ paddingHorizontal: 15 }}
       >
         {categories.map((cat, index) => {
-          let isActive = cat.strCategory == activeCategory
+          let isActive = cat.strCategory == activeCategory;
 
           return (
             <TouchableOpacity
@@ -50,9 +50,9 @@ export default function Categories({
                 {cat.strCategory}
               </Text>
             </TouchableOpacity>
-          )
+          );
         })}
       </ScrollView>
     </Animated.View>
-  )
+  );
 }
