@@ -21,7 +21,7 @@
   
   
  <h3>Final Snapshot</h3>
-<p>will insert git here</p>
+<p>will insert gif here</p>
  
  <h3>Fifth Snapshot</h3>
  https://github.com/Joseph-WhiteSWE/yum-yum-so-good/assets/122577026/dffa13e4-d56c-4d1d-afe4-1ef0a4afc5bd
